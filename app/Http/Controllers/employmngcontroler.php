@@ -16,12 +16,12 @@ class employmngcontroler extends Controller
         $response['employee_sample'] = $this->uniqueemployee->all();
         return view('employee-mngt.index')->with($response);
     }
-    public function table(){
-        $response['employee_sample'] = $this->uniqueemployee->all();
-        return view('employee-mngt.index')->with($response);
-    public function create()}{
+    #public function table(){
+        #$response['employee_sample'] = $this->uniqueemployee->all();
+        #return view('employee-mngt.index')->with($response);
+    #public function create()
       
-    }
+    
     public function store(Request $request){
        $this->uniqueemployee->create($request->all());
        return redirect()->back();
