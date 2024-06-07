@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class employmngcontroler extends Controller
 {
     protected $uniqueemployee;
+    protected $employee_sample;
 
     public function __construct(){
         $this->uniqueemployee = New employeesample();
@@ -16,12 +17,10 @@ class employmngcontroler extends Controller
         $response['employee_sample'] = $this->uniqueemployee->all();
         return view('employee-mngt.index')->with($response);
     }
-    #public function table(){
-        #$response['employee_sample'] = $this->uniqueemployee->all();
-        #return view('employee-mngt.index')->with($response);
-    #public function create()
-      
-    
+    // public function table(){
+    //     $response['employee_sample'] = $this->uniqueemployee->all();
+    //     return view('employee-mngt.index')->with($response);
+    // }
     public function store(Request $request){
        $this->uniqueemployee->create($request->all());
        return redirect()->back();
